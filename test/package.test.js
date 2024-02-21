@@ -2,6 +2,7 @@
 
 var sinon = require("sinon");
 var pkg = require("..");
+var expect = require("chai").expect;
 
 describe("passport-webauthn", function () {
   it("should export Strategy constructor as module", function () {
