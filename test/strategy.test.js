@@ -310,7 +310,7 @@ describe("Strategy", function () {
       .authenticate();
   }); // should verify YubiKey 4 using flags via level 3
 
-  xit("should verify YubiKey 4 signature counter via level 3", function (done) {
+  it("should verify YubiKey 4 signature counter via level 3", function (done) {
     function verifySignCount(id, signCount, storedSignCount, cb) {
       expect(id).to.equal(
         "VjXl8fuJXIAqLg-BVrR5oeLLfee6gBGKXdMxo6xtMySugJfU2HNvTJk84T1DgFYtJDpDrwL2Bg_QM4xQwVAutA",
@@ -374,7 +374,7 @@ describe("Strategy", function () {
       .success(function (user, info) {
         expect(user).to.deep.equal({ id: "248289761001" });
         expect(info).to.deep.equal({ signCount: 79 });
-        expect(verifySignCountSpy).to.have.been.called;
+        expect(verifySignCountSpy.calledOnce).to.equal(true);
         expect(this.session).to.deep.equal({
           messages: [],
         });
