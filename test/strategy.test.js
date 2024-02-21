@@ -1,12 +1,12 @@
-var chai = require("chai");
-var sinon = require("sinon");
-var Strategy = require("../lib/strategy");
-var expect = chai.expect;
+const chai = require("chai");
+const sinon = require("sinon");
+const Strategy = require("../lib/strategy");
+const expect = chai.expect;
 chai.use(require("chai-passport-strategy"));
 
 describe("Strategy", function () {
   it("should be named webauthn", function () {
-    var strategy = new Strategy(function () {});
+    const strategy = new Strategy(function () {});
 
     expect(strategy.name).to.equal("webauthn");
   });
@@ -20,7 +20,7 @@ describe("Strategy", function () {
               "JYrR3EvvQJNqG0i_OwJckOkbzq4YJWviotG4hig9wA_Qdxm-eBEHfsYqBJKTtXMasL-RD9CFOlcag48icK3E8Q",
             );
             expect(userHandle).to.be.null;
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/6j9N8S3dBWutrvVJBB3MrU5uipV\n" +
               "D8+rZ0GboVEJMPT3HZmICG/06CAPSqcDchP+qLa0N8Tvp9FSmguCnvLtZg==\n" +
@@ -79,7 +79,7 @@ describe("Strategy", function () {
               "iFxmcVm7eyw5q34uNELR_lSs4pyeL8CJrHN8ZZanOTrn5JxIMS7Z1Km-ZA",
             );
             expect(Buffer.compare(userHandle, Buffer.from("4"))).to.equal(0);
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESo+uMzzeOSkrHdJFfK98BdlhtydB\n" +
               "sYCSfcQItYWDgr7qFbPLcRIiuS3ejIa4iFHAe01oslaURGWUxtby39TpQA==\n" +
@@ -139,7 +139,7 @@ describe("Strategy", function () {
               userPresent: true,
               userVerified: true,
             });
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESo+uMzzeOSkrHdJFfK98BdlhtydB\n" +
               "sYCSfcQItYWDgr7qFbPLcRIiuS3ejIa4iFHAe01oslaURGWUxtby39TpQA==\n" +
@@ -195,7 +195,7 @@ describe("Strategy", function () {
               "VjXl8fuJXIAqLg-BVrR5oeLLfee6gBGKXdMxo6xtMySugJfU2HNvTJk84T1DgFYtJDpDrwL2Bg_QM4xQwVAutA",
             );
             expect(userHandle).to.be.null;
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaLB+Aejtfh9S/i+iU1IfvQswbRlS\n" +
               "EGu/tcXrRjnscbMNflAnHVHDeb4PzlexGEjGgrsZiuLmlq+ZTOJjOsGOeQ==\n" +
@@ -259,7 +259,7 @@ describe("Strategy", function () {
               userPresent: true,
               userVerified: false,
             });
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaLB+Aejtfh9S/i+iU1IfvQswbRlS\n" +
               "EGu/tcXrRjnscbMNflAnHVHDeb4PzlexGEjGgrsZiuLmlq+ZTOJjOsGOeQ==\n" +
@@ -319,7 +319,7 @@ describe("Strategy", function () {
       expect(storedSignCount).to.equal(79);
       return cb(null, true);
     }
-    var verifySignCountSpy = sinon.spy(verifySignCount);
+    const verifySignCountSpy = sinon.spy(verifySignCount);
 
     chai.passport
       .use(
@@ -329,7 +329,7 @@ describe("Strategy", function () {
               "VjXl8fuJXIAqLg-BVrR5oeLLfee6gBGKXdMxo6xtMySugJfU2HNvTJk84T1DgFYtJDpDrwL2Bg_QM4xQwVAutA",
             );
             expect(userHandle).to.be.null;
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaLB+Aejtfh9S/i+iU1IfvQswbRlS\n" +
               "EGu/tcXrRjnscbMNflAnHVHDeb4PzlexGEjGgrsZiuLmlq+ZTOJjOsGOeQ==\n" +
@@ -392,7 +392,7 @@ describe("Strategy", function () {
             expect(id).to.equal(
               "iFxmcVm7eyw5q34uNELR_lSs4pyeL8CJrHN8ZZanOTrn5JxIMS7Z1Km-ZA",
             );
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESo+uMzzeOSkrHdJFfK98BdlhtydB\n" +
               "sYCSfcQItYWDgr7qFbPLcRIiuS3ejIa4iFHAe01oslaURGWUxtby39TpQA==\n" +
@@ -447,7 +447,7 @@ describe("Strategy", function () {
             expect(id).to.equal(
               "iFxmcVm7eyw5q34uNELR_lSs4pyeL8CJrHN8ZZanOTrn5JxIMS7Z1Km-ZA",
             );
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESo+uMzzeOSkrHdJFfK98BdlhtydB\n" +
               "sYCSfcQItYWDgr7qFbPLcRIiuS3ejIa4iFHAe01oslaURGWUxtby39TpQA==\n" +
@@ -503,7 +503,7 @@ describe("Strategy", function () {
       expect(storedSignCount).to.equal(81);
       return cb(null, false);
     }
-    var verifySignCountSpy = sinon.spy(verifySignCount);
+    const verifySignCountSpy = sinon.spy(verifySignCount);
 
     chai.passport
       .use(
@@ -512,7 +512,7 @@ describe("Strategy", function () {
             expect(id).to.equal(
               "VjXl8fuJXIAqLg-BVrR5oeLLfee6gBGKXdMxo6xtMySugJfU2HNvTJk84T1DgFYtJDpDrwL2Bg_QM4xQwVAutA",
             );
-            var publicKey =
+            const publicKey =
               "-----BEGIN PUBLIC KEY-----\n" +
               "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEaLB+Aejtfh9S/i+iU1IfvQswbRlS\n" +
               "EGu/tcXrRjnscbMNflAnHVHDeb4PzlexGEjGgrsZiuLmlq+ZTOJjOsGOeQ==\n" +

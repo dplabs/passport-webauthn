@@ -1,8 +1,6 @@
-/* global describe, it */
-
-var sinon = require("sinon");
-var pkg = require("..");
-var expect = require("chai").expect;
+const sinon = require("sinon");
+const pkg = require("..");
+const expect = require("chai").expect;
 
 describe("passport-webauthn", function () {
   it("should export Strategy constructor as module", function () {
