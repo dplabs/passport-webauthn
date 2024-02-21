@@ -18,7 +18,7 @@ including [Express](https://expressjs.com/).
 ## Install
 
 ```sh
-$ npm install passport-fido2-webauthn
+npm install passport-fido2-webauthn
 ```
 
 ## Usage
