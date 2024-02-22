@@ -48,6 +48,9 @@
     "sinon-chai": "^3.7.0"
   },
   "scripts": {
-    "test": "mocha test/*.test.js"
+    "test": "mocha test/*.test.js",
+    "bump-patch-app-version": "npm version patch --message \"Version %s published [skip ci]\"",
+    "bump-minor-app-version": "npm version minor --message \"Version %s published [skip ci]\"",
+    "bump-major-app-version": "npm version major --message \"Version %s published [skip ci]\""
   }
 }
